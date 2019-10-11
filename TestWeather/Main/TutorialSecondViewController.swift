@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TutorialSecondViewController.swift
 //  TestWeather
 //
 //  Created by andy.zemlianski on 10/11/19.
@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TutorialSecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+self.view.backgroundColor = UIColor.blue
+       
+        
+        
+        
     }
+    
 
 
+    
+    
+    
 }
-

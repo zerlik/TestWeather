@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8064D4323506F7000D0C628 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4223506F7000D0C628 /* MainPageViewController.swift */; };
+		B8064D4523506FC500D0C628 /* TutorialFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4423506FC500D0C628 /* TutorialFirstViewController.swift */; };
+		B8064D4723506FD900D0C628 /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4623506FD900D0C628 /* TutorialSecondViewController.swift */; };
+		B8064D4C2350754A00D0C628 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4B2350754A00D0C628 /* Constants.swift */; };
+		B8064D4E235075E300D0C628 /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4D235075E300D0C628 /* BundleHelper.swift */; };
+		B8064D5023507C1C00D0C628 /* images3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8064D4F23507C1C00D0C628 /* images3.jpg */; };
+		B8064D522350A61400D0C628 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D512350A61400D0C628 /* LocationHelper.swift */; };
 		B8447610235069550022486F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844760F235069550022486F /* AppDelegate.swift */; };
-		B8447612235069550022486F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8447611235069550022486F /* ViewController.swift */; };
 		B8447615235069550022486F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8447613235069550022486F /* Main.storyboard */; };
 		B8447617235069560022486F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8447616235069560022486F /* Assets.xcassets */; };
 		B844761A235069560022486F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8447618235069560022486F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8064D4223506F7000D0C628 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		B8064D4423506FC500D0C628 /* TutorialFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFirstViewController.swift; sourceTree = "<group>"; };
+		B8064D4623506FD900D0C628 /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
+		B8064D4B2350754A00D0C628 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B8064D4D235075E300D0C628 /* BundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleHelper.swift; sourceTree = "<group>"; };
+		B8064D4F23507C1C00D0C628 /* images3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images3.jpg; sourceTree = "<group>"; };
+		B8064D512350A61400D0C628 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		B844760C235069550022486F /* TestWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B844760F235069550022486F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8447611235069550022486F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8447614235069550022486F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8447616235069560022486F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8447619235069560022486F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +47,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8064D4023506BF700D0C628 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B8447618235069560022486F /* LaunchScreen.storyboard */,
+				B844760F235069550022486F /* AppDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		B8064D4123506F1D00D0C628 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B8447613235069550022486F /* Main.storyboard */,
+				B8064D4223506F7000D0C628 /* MainPageViewController.swift */,
+				B8064D4423506FC500D0C628 /* TutorialFirstViewController.swift */,
+				B8064D4623506FD900D0C628 /* TutorialSecondViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B8064D482350751200D0C628 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B8064D4B2350754A00D0C628 /* Constants.swift */,
+				B8064D4D235075E300D0C628 /* BundleHelper.swift */,
+				B8064D512350A61400D0C628 /* LocationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B8447603235069550022486F = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +96,12 @@
 		B844760E235069550022486F /* TestWeather */ = {
 			isa = PBXGroup;
 			children = (
-				B844760F235069550022486F /* AppDelegate.swift */,
-				B8447611235069550022486F /* ViewController.swift */,
-				B8447613235069550022486F /* Main.storyboard */,
-				B8447616235069560022486F /* Assets.xcassets */,
-				B8447618235069560022486F /* LaunchScreen.storyboard */,
+				B8064D482350751200D0C628 /* Helpers */,
+				B8064D4123506F1D00D0C628 /* Main */,
+				B8064D4023506BF700D0C628 /* SupportFiles */,
 				B844761B235069560022486F /* Info.plist */,
+				B8447616235069560022486F /* Assets.xcassets */,
+				B8064D4F23507C1C00D0C628 /* images3.jpg */,
 			);
 			path = TestWeather;
 			sourceTree = "<group>";
@@ -125,6 +167,7 @@
 				B844761A235069560022486F /* LaunchScreen.storyboard in Resources */,
 				B8447617235069560022486F /* Assets.xcassets in Resources */,
 				B8447615235069550022486F /* Main.storyboard in Resources */,
+				B8064D5023507C1C00D0C628 /* images3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8447612235069550022486F /* ViewController.swift in Sources */,
+				B8064D4723506FD900D0C628 /* TutorialSecondViewController.swift in Sources */,
+				B8064D4E235075E300D0C628 /* BundleHelper.swift in Sources */,
+				B8064D4323506F7000D0C628 /* MainPageViewController.swift in Sources */,
+				B8064D4523506FC500D0C628 /* TutorialFirstViewController.swift in Sources */,
 				B8447610235069550022486F /* AppDelegate.swift in Sources */,
+				B8064D522350A61400D0C628 /* LocationHelper.swift in Sources */,
+				B8064D4C2350754A00D0C628 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S58FZLDBPQ;
 				INFOPLIST_FILE = TestWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S58FZLDBPQ;
 				INFOPLIST_FILE = TestWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
