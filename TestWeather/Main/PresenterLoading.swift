@@ -8,30 +8,28 @@
 
 import Foundation
 
-class PresenterLoading{
+class PresenterLoading : LoadingPresenterProtocol{
     
     weak var view: LoadingViewCProtocol?
     var router: RouterProtocol?
     
+    var remoteDatamanager: RemoteDataManagerInputProtocol?
+    
     func viewDidLoad(){
-        
-        //get weather data from repo
+        remoteDatamanager?.retrieveWeather()
     }
     
     func willAppear(){
-        if let userLocation = LocationHelper.getSavedLocation(){
-            router?.navigate(to: .goToWeatherVC())
-        }else{
-            router?.navigate(to: .goToPageView())
+        guard let _ = LocationHelper.getSavedLocation() else{
+            router?.navigate(to: .goToPageView)
+            return
         }
     }
-    
-   
 }
 
 extension PresenterLoading: RemoteDataManagerOutputProtocol{
-    func WeatherDataRetrieved(_ data : WeatherModelJson){
-// set route router?.navigate(to: .goToWeatherVC())
+    func weatherDataRetrieved(_ data: WeatherModelJson) {
+        router?.navigate(to: .goToWeatherVC(data))
     }
     
     func onError(_ error: String) {

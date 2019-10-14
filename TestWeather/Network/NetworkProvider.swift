@@ -12,8 +12,8 @@ internal class NetworkProvider {
     
     public func getWeatherFromNetwork( completion: @escaping (WeatherModelJson?, Error?)->Void ){
         let service = ServiceNetwork()
-//        service.getUsers(completion: { (users, err) in
-//            return completion (users,err)
-//        })
+        service.getWeather(completion: { (weather, err) in
+            return completion (weather,err)
+        })
     }
 }

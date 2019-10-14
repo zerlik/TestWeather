@@ -14,6 +14,7 @@ internal protocol LoadingViewCProtocol : class{
 
 internal protocol LoadingPresenterProtocol: class {
     var view: LoadingViewCProtocol? { get set }
+    var remoteDatamanager: RemoteDataManagerInputProtocol?{get set}
 }
 
 internal protocol RemoteDataManagerInputProtocol: class{
@@ -22,6 +23,6 @@ internal protocol RemoteDataManagerInputProtocol: class{
 }
 
 internal protocol RemoteDataManagerOutputProtocol: class{
-    func weatherDataRetrieved(_ data : WeatherModelJson)
+    func weatherDataRetrieved(_ data: WeatherModelJson)
     func onError(_ error: String)
 }

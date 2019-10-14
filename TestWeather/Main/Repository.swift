@@ -18,6 +18,11 @@ internal class RemoteDataManager: RemoteDataManagerInputProtocol {
     }
     
     func retrieveWeather(){
-
+        service.getWeatherFromNetwork { (weather , error) in
+            if let err = error as? String {
+                self.remoteRequestHandler?.onError(err)
+            }
+            if weather != nil{ self.remoteRequestHandler?.weatherDataRetrieved(weather!) }
+        }
     }
 }
