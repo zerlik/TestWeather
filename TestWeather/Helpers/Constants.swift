@@ -17,7 +17,8 @@ public enum Constants {
         
         public static let sunnyIMG : UIImage = UIImage(named: "images")!
         public static let umbrellaIMG : UIImage = UIImage(named: "og_image")!
-        
+        public static let cityIMG : UIImage = UIImage(named: "city")!
+        public static let villageIMG : UIImage = UIImage(named: "village")!
     }
     
     public enum AllStr{

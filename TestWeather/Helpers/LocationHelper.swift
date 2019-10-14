@@ -32,6 +32,7 @@ class LocationHelper{
     }
     
     class func setLocation(locationManager: CLLocation?){
+        print("LOCATIOn ===== \(locationManager?.coordinate.latitude)")
         UserDefaults.standard.set(locationManager?.coordinate.latitude , forKey: "lat")
         UserDefaults.standard.set(locationManager?.coordinate.longitude , forKey: "long")
     }
@@ -44,18 +45,6 @@ class LocationHelper{
         guard let longNumb = Double(longStr), let latNumb = Double(latStr) else { return nil }
         return CLLocationCoordinate2D(latitude: latNumb, longitude: longNumb)
     }
-    
-    //    class func checkStatusLocation( locationManager: CLLocationManager)->Bool{//true когда вкл но нету коорд
-    //        switch CLLocationManager.authorizationStatus(){
-    //        case .authorizedWhenInUse, .authorizedAlways, .authorized:
-    //            locationManager.requestLocation()
-    //
-    //
-    //
-    //            return true
-    //        default: return false
-    //        }
-    //    }
     
     class func getLocation(view: UIViewController , locationManager: CLLocationManager){
         

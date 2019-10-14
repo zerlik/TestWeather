@@ -1,10 +1,75 @@
 PODS:
   - Alamofire (4.9.0)
+  - Firebase/Analytics (6.10.0):
+    - Firebase/Core
+  - Firebase/Core (6.10.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.1.3)
+  - Firebase/CoreOnly (6.10.0):
+    - FirebaseCore (= 6.3.1)
+  - FirebaseAnalytics (6.1.3):
+    - FirebaseCore (~> 6.3)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleAppMeasurement (= 6.1.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3.901)
+  - FirebaseCore (6.3.1):
+    - FirebaseCoreDiagnostics (~> 1.0)
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+  - FirebaseCoreDiagnostics (1.1.1):
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleDataTransportCCTSupport (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.0.0)
+  - FirebaseInstanceID (4.2.5):
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/UserDefaults (~> 6.0)
+  - GoogleAppMeasurement (6.1.3):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3.901)
+  - GoogleDataTransport (3.0.0)
+  - GoogleDataTransportCCTSupport (1.2.0):
+    - GoogleDataTransport (~> 3.0)
+    - nanopb (~> 0.3.901)
+  - GoogleUtilities/AppDelegateSwizzler (6.3.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.3.1)
+  - GoogleUtilities/Logger (6.3.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.3.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.3.1)"
+  - GoogleUtilities/Reachability (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.3.1):
+    - GoogleUtilities/Logger
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - Result (4.1.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
@@ -14,6 +79,7 @@ PODS:
   - RxSwift (5.0.0)
 
 DEPENDENCIES:
+  - Firebase/Analytics
   - Moya
   - RxCocoa
   - RxSwift
@@ -21,7 +87,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
     - Moya
+    - nanopb
     - Result
     - RxCocoa
     - RxRelay
@@ -29,12 +106,23 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
+  FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
+  FirebaseCore: 064c2dd92a8ca5974bbdcb080df9921e46bd34cd
+  FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
+  FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
+  FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
+  GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
+  GoogleDataTransport: f6fe28f43e3a300736854260961ad485b473edc5
+  GoogleDataTransportCCTSupport: 862418a8cdda520c4dd4af83a756d04efe4a6990
+  GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: c867872e84e5434b5b3d8444a0b9e339e95c0c7e
+PODFILE CHECKSUM: 39b1f0940fb8ee080e34b68982739630148fe05c
 
 COCOAPODS: 1.6.2

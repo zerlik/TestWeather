@@ -20,16 +20,12 @@ internal final class WeatherBuilder{
             return UIViewController()
         }
         
-//        let presenter: ChatPresenterProtocol = PresenterChat()
-//        let router: ChatRouterProtocol = RouterChat(view: cont)
-//
-//        cont.presenter = presenter
-//        presenter.view = cont
-//        presenter.router = router
-        
-//        let navigationController = AppBaseNavigationController(rootViewController: view)
+        let presenter: WeatherPresenterProtocol = PresenterWeather()
+        cont.presenter = presenter
+        presenter.view = cont
+        presenter.weather = data
         
         return cont
-        
+      
     }
 }

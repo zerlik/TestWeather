@@ -16,23 +16,25 @@ class PresenterLoading : LoadingPresenterProtocol{
     var remoteDatamanager: RemoteDataManagerInputProtocol?
     
     func viewDidLoad(){
-        remoteDatamanager?.retrieveWeather()
+        
     }
     
     func willAppear(){
-        guard let _ = LocationHelper.getSavedLocation() else{
+        guard let coordinates = LocationHelper.getSavedLocation() else{
             router?.navigate(to: .goToPageView)
             return
         }
+        remoteDatamanager?.retrieveWeather(lat: coordinates.latitude, long: coordinates.longitude)
     }
 }
 
 extension PresenterLoading: RemoteDataManagerOutputProtocol{
     func weatherDataRetrieved(_ data: WeatherModelJson) {
+        print(data.nameCity)
         router?.navigate(to: .goToWeatherVC(data))
     }
     
     func onError(_ error: String) {
-            // vc present ASheet error
+        // vc present ASheet error
     }
 }

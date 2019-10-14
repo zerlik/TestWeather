@@ -17,7 +17,7 @@ internal class RemoteDataManager: RemoteDataManagerInputProtocol {
         self.service = service
     }
     
-    func retrieveWeather(){
+    func retrieveWeather(lat: Double, long: Double){
         service.getWeatherFromNetwork { (weather , error) in
             if let err = error as? String {
                 self.remoteRequestHandler?.onError(err)

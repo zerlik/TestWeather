@@ -8,23 +8,32 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
-
+class WeatherViewController: UIViewController , WeatherViewCProtocol{
+    
+    @IBOutlet weak var cityImg: UIImageView!
+    @IBOutlet weak var nameCity: UILabel!
+    @IBOutlet weak var tempMaxLabel: UILabel!
+    @IBOutlet weak var tempMinLabel: UILabel!
+    
+    public var presenter: WeatherPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter.viewDidLoad()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public func setUI(_ data: WeatherModelJson ){
+        if let city = data.nameCity {
+            nameCity.text = city
+            if (city.contains("Horad")){
+                
+                cityImg.image = Constants.AllImages.cityIMG
+            }else{
+                cityImg.image = Constants.AllImages.villageIMG
+            }
+        }
+        if let max = data.main?.tempMax{ tempMaxLabel.text = "Temp MAX  = \(max)" }
+        if let min = data.main?.tempMin{ tempMinLabel.text = "Temp MIN  = \(min)" }
+        
     }
-    */
-
 }

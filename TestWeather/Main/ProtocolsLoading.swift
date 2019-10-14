@@ -13,13 +13,17 @@ internal protocol LoadingViewCProtocol : class{
 }
 
 internal protocol LoadingPresenterProtocol: class {
-    var view: LoadingViewCProtocol? { get set }
+    var view: LoadingViewCProtocol? { get set}
+    var router: RouterProtocol?{get set}
     var remoteDatamanager: RemoteDataManagerInputProtocol?{get set}
+    
+    func viewDidLoad()
+    func willAppear()
 }
 
 internal protocol RemoteDataManagerInputProtocol: class{
-    var remoteRequestHandler: RemoteDataManagerOutputProtocol? { get set }
-    func retrieveWeather()
+    var remoteRequestHandler: RemoteDataManagerOutputProtocol? { get set}
+    func retrieveWeather(lat: Double, long: Double)
 }
 
 internal protocol RemoteDataManagerOutputProtocol: class{

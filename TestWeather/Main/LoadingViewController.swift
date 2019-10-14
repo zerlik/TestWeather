@@ -9,18 +9,18 @@
 import UIKit
 import CoreLocation
 
-class LoadingViewController: BaseLocationViewController {
+class LoadingViewController: BaseLocationViewController, LoadingViewCProtocol {
     
     public var presenter: LoadingPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        presenter.willAppear()
        
     }
 }

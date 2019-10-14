@@ -10,5 +10,6 @@ target 'TestWeather' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'Moya'
+pod 'Firebase/Analytics'
 
 end
