@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A8i-Zh-9fd">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Page View Controller-->
-        <scene sceneID="Bgk-VR-7MD">
+        <!--Loading View Controller-->
+        <scene sceneID="Q6U-5j-6MF">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="YMd-Wk-q6x" customClass="MainPageViewController" customModule="TestWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="djj-B1-BgB"/>
+                <viewController storyboardIdentifier="LoadingViewController" id="3I8-YC-JJj" customClass="LoadingViewController" customModule="TestWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D8F-KM-yqk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hl1-Xp-7yM">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-pr-acR">
+                                <rect key="frame" x="167" y="392.5" width="80" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hl1-Xp-7yM" firstAttribute="centerX" secondItem="wXf-3w-icu" secondAttribute="centerX" id="3Ic-19-D2e"/>
+                            <constraint firstItem="hl1-Xp-7yM" firstAttribute="top" secondItem="DgX-pr-acR" secondAttribute="bottom" constant="30" id="7bt-Jq-pTW"/>
+                            <constraint firstItem="hl1-Xp-7yM" firstAttribute="centerY" secondItem="wXf-3w-icu" secondAttribute="centerY" id="agr-iy-Yyf"/>
+                            <constraint firstItem="DgX-pr-acR" firstAttribute="centerX" secondItem="hl1-Xp-7yM" secondAttribute="centerX" id="b4A-SW-63H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wXf-3w-icu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bzm-QN-Nr9"/>
                     <nil key="simulatedTopBarMetrics"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qZj-9r-LaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdS-0N-wBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.8695652173915" y="13.392857142857142"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="IjJ-mV-iav">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="A8i-Zh-9fd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hh-Lq-YAl">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="YMd-Wk-q6x" kind="relationship" relationship="rootViewController" id="akV-u0-FV8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VhS-ew-gi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750.72463768115949" y="13.392857142857142"/>
+            <point key="canvasLocation" x="1823.1884057971015" y="36.830357142857139"/>
         </scene>
     </scenes>
 </document>

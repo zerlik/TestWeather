@@ -21,7 +21,14 @@ public enum Constants {
     }
     
     public enum AllStr{
-       public static let locationMessage = "Allow Location Access"
-       public static let needAccesMessage = "Weather needs access to your location. Turn on Location Services in your device settings."
+        
+        public static let locationMessage : String = "Allow Location Access"
+        public static let needAccesMessage : String = "Weather needs access to your location. Turn on Location Services in your device settings."
+    }
+    
+    public enum NetworkApi{
+    public static let userApiKey: String = "aeb46271e330b0e38e34ba813a0c6a4f"
+    public static let endPointApi: String = "http://api.openweathermap.org/data/2.5/weather"
     }
 }
+

@@ -7,4 +7,8 @@ target 'TestWeather' do
 
   # Pods for TestWeather
 
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'Moya'
+
 end

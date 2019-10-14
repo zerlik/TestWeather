@@ -7,41 +7,12 @@
 //
 
 import Foundation
-import CoreLocation
 import UIKit
+import CoreLocation
+//import RxCocoa
+//import RxSwift
 
 class LocationHelper{
-    
-    
-    //    static func getPermission( completionHandler: @escaping (Bool) -> Void) {
-    //
-    //        //        //AUTO-LOCATION
-    //        let locationManager = CLLocationManager()
-    //
-    //        if CLLocationManager.locationServicesEnabled() {
-    //            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    //
-    //            switch CLLocationManager.authorizationStatus() {
-    //            case .notDetermined:
-    //                locationManager.requestAlwaysAuthorization()
-    //                locationManager.requestWhenInUseAuthorization()
-    //                locationManager.startUpdatingLocation()
-    //                print("mhgkjhkhgjhjjhjhjjjhjjhgjhg")
-    //                return completionHandler(true)
-    //
-    //            case .restricted, .denied:
-    //                // Disable location features
-    ////                self.locationAlertMessage(viewController: view) { (status) in
-    ////                    return completionHandler(status)
-    ////                }
-    //                print("mhgjhgjhg")
-    //            case .authorizedWhenInUse, .authorizedAlways:
-    //                // Enable features that require location services here.
-    //                                print("Full Access")
-    //                return completionHandler(false)
-    //            }
-    //        }
-    //    }
     
     //            (string: "App-Prefs: root= LOCATION_SERVICES"))
     class func alertSettingsMessage(title: String, message: String, viewController: UIViewController){
@@ -51,7 +22,7 @@ class LocationHelper{
         alert.addAction(UIAlertAction(title: "Settings", style: UIAlertAction.Style.default, handler: { action in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return  }
             guard UIApplication.shared.canOpenURL(settingsUrl) else{ return }
-  
+            
             UIApplication.shared.open(settingsUrl, completionHandler: nil)
         }))
         
@@ -59,4 +30,49 @@ class LocationHelper{
         
         viewController.present(alert, animated: true, completion:nil)
     }
+    
+    class func setLocation(locationManager: CLLocation?){
+        UserDefaults.standard.set(locationManager?.coordinate.latitude , forKey: "lat")
+        UserDefaults.standard.set(locationManager?.coordinate.longitude , forKey: "long")
+    }
+    
+    //    class func getSavedLocation()->Observable<String?>{
+    //       return UserDefaults.standard.rx.observe(String.self, "long")
+    
+    class func getSavedLocation()->CLLocationCoordinate2D?{
+        guard let longStr =  UserDefaults.standard.string(forKey: "long") , let latStr =  UserDefaults.standard.string(forKey: "lat") else{ return nil }
+        guard let longNumb = Double(longStr), let latNumb = Double(latStr) else { return nil }
+        return CLLocationCoordinate2D(latitude: latNumb, longitude: longNumb)
+    }
+    
+    //    class func checkStatusLocation( locationManager: CLLocationManager)->Bool{//true когда вкл но нету коорд
+    //        switch CLLocationManager.authorizationStatus(){
+    //        case .authorizedWhenInUse, .authorizedAlways, .authorized:
+    //            locationManager.requestLocation()
+    //
+    //
+    //
+    //            return true
+    //        default: return false
+    //        }
+    //    }
+    
+    class func getLocation(view: UIViewController , locationManager: CLLocationManager){
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedWhenInUse, .authorizedAlways, .authorized:
+                locationManager.requestLocation()
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                LocationHelper.alertSettingsMessage(title: Constants.AllStr.locationMessage, message: Constants.AllStr.needAccesMessage, viewController: view)
+            }
+        }else{
+            LocationHelper.alertSettingsMessage(title: Constants.AllStr.locationMessage, message: Constants.AllStr.needAccesMessage, viewController: view)
+        }
+    }
+    
 }
+
