@@ -22,7 +22,11 @@ internal class RemoteDataManager: RemoteDataManagerInputProtocol {
             if let err = error as? String {
                 self.remoteRequestHandler?.onError(err)
             }
-            if weather != nil{ self.remoteRequestHandler?.weatherDataRetrieved(weather!) }
+            if weather != nil{
+                DispatchQueue.main.async {
+                    self.remoteRequestHandler?.weatherDataRetrieved(weather!)
+                }
+            }
         }
     }
 }

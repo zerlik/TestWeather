@@ -26,10 +26,10 @@ internal final class BuilderLoading{
          let remoteDataManager: RemoteDataManagerInputProtocol = RemoteDataManager(service: NetworkProvider())
         
         cont.presenter = presenter
+        presenter.view = cont
         presenter.router = router
         presenter.remoteDatamanager = remoteDataManager
         remoteDataManager.remoteRequestHandler = presenter
-        
         
         let navigationController = AppBaseNavigationController(rootViewController: view)
         

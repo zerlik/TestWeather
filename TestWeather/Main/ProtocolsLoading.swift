@@ -30,3 +30,4 @@ internal protocol RemoteDataManagerOutputProtocol: class{
     func weatherDataRetrieved(_ data: WeatherModelJson)
     func onError(_ error: String)
 }
+

@@ -8,10 +8,12 @@
 
 import UIKit
 
-class MainPageViewController : UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
+class MainPageViewController : UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, PageVCProtocol{
     
     private let firstVC = TutorialFirstViewController()
     private let secondVC = TutorialSecondViewController()
+    
+    public var presenter: PagePresenterProtocol!
     
     private lazy var orderedViewControllers: [UIViewController] = {
         return [ firstVC, secondVC ]
@@ -23,7 +25,21 @@ class MainPageViewController : UIPageViewController, UIPageViewControllerDelegat
         self.dataSource = self
         self.delegate = self
         
+        presenter.viewDidLoad()
         viewLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        presenter.viewWillAppear()
+    }
+    
+    func showButtonOnFirstView() {
+        firstVC.showButton()
+    }
+    
+    func showActionSheet() {
+        firstVC.showActionSheet()
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -43,7 +59,7 @@ class MainPageViewController : UIPageViewController, UIPageViewControllerDelegat
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            return nil
+        return nil
     }
     
 }
@@ -51,6 +67,7 @@ class MainPageViewController : UIPageViewController, UIPageViewControllerDelegat
 extension MainPageViewController{
     
     private func viewLoad(){
+        
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],  direction: .forward, animated: true, completion: nil)
         }

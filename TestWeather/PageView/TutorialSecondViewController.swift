@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialSecondViewController: UIViewController {
+class TutorialSecondViewController: AppBaseViewController {
 
       private let productImageView: UIImageView = {
             let imageView = UIImageView()

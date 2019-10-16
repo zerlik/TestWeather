@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class LoadingViewController: BaseLocationViewController, LoadingViewCProtocol {
+class LoadingViewController: AppBaseViewController, LoadingViewCProtocol {
     
     public var presenter: LoadingPresenterProtocol!
     

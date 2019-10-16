@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController , WeatherViewCProtocol{
+class WeatherViewController: AppBaseViewController , WeatherViewCProtocol{
     
     @IBOutlet weak var cityImg: UIImageView!
     @IBOutlet weak var nameCity: UILabel!

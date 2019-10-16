@@ -20,6 +20,13 @@ internal final class PageViewBuilder{
             return UIViewController()
         }
         
+        let presenter: PagePresenterProtocol  = PresenterPage()
+        let router: RouterProtocol = Router(view: cont)
+        
+        cont.presenter = presenter
+        presenter.view = cont
+        presenter.router = router
+        
         return cont
         
     }

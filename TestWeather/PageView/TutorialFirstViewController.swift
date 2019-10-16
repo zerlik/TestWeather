@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-internal class TutorialFirstViewController:BaseLocationViewController {
+internal class TutorialFirstViewController:AppBaseViewController {
     
     private let productImageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,14 +31,20 @@ internal class TutorialFirstViewController:BaseLocationViewController {
     typealias callBackData = () -> ()
     var nextCallBack: callBackData!
     
+    public var presenter: PagePresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
     
+    let locationViewController = LocationViewController()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        locationViewController.willAppear()
     }
+    
     
     @objc private func buttonAction(sender: UIButton!) {
         nextCallBack()
@@ -53,6 +59,14 @@ internal class TutorialFirstViewController:BaseLocationViewController {
         setupAutoLayout()
     }
     
+    public func showButton(){
+        self.nextButton.isHidden = false
+    }
+    
+    public func showActionSheet(){
+        LocationHelper.alertSettingsMessage(title: Constants.AllStr.locationMessage, message:  Constants.AllStr.needAccesMessage, viewController: self)
+    }
+    
     private func setupAutoLayout() {
         
         self.productImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -64,14 +78,5 @@ internal class TutorialFirstViewController:BaseLocationViewController {
         self.nextButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20 ).isActive = true
         self.nextButton.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -70 ).isActive = true
         self.nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    // BaseViewController override for button
-    override func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorized || status == .authorizedWhenInUse{
-            locationManager.requestLocation()
-            self.nextButton.isHidden = false
-        }else{
-            LocationHelper.getLocation(view: self, locationManager: locationManager)
-        }
     }
 }

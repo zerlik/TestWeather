@@ -14,6 +14,8 @@
 		B8064D4C2350754A00D0C628 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4B2350754A00D0C628 /* Constants.swift */; };
 		B8064D4E235075E300D0C628 /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D4D235075E300D0C628 /* BundleHelper.swift */; };
 		B8064D522350A61400D0C628 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8064D512350A61400D0C628 /* LocationHelper.swift */; };
+		B8412FEB2355CBE100C48CC7 /* PresenterPageV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8412FEA2355CBE100C48CC7 /* PresenterPageV.swift */; };
+		B8412FED2355CC3A00C48CC7 /* ProtocolsPageV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8412FEC2355CC3A00C48CC7 /* ProtocolsPageV.swift */; };
 		B8447610235069550022486F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844760F235069550022486F /* AppDelegate.swift */; };
 		B8447615235069550022486F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8447613235069550022486F /* Main.storyboard */; };
 		B8447617235069560022486F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8447616235069560022486F /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		B878A6CC235463A0003E013B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6CB235463A0003E013B /* Router.swift */; };
 		B878A6CE23546A4D003E013B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6CD23546A4D003E013B /* Repository.swift */; };
 		B878A6D023546AB8003E013B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6CF23546AB8003E013B /* NetworkProvider.swift */; };
+		B87F30D8235756D600772995 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F30D7235756D600772995 /* LocationManager.swift */; };
 		B8D754F72354C4C4001451E3 /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D754F62354C4C4001451E3 /* EventsManager.swift */; };
 		CCC77E2D235241EA00CD9F02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC77E2C235241EA00CD9F02 /* BaseViewController.swift */; };
 		CCC77E30235254F800CD9F02 /* WeatherModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC77E2F235254F800CD9F02 /* WeatherModelJSON.swift */; };
@@ -49,6 +52,8 @@
 		B8064D4B2350754A00D0C628 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B8064D4D235075E300D0C628 /* BundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleHelper.swift; sourceTree = "<group>"; };
 		B8064D512350A61400D0C628 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		B8412FEA2355CBE100C48CC7 /* PresenterPageV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterPageV.swift; sourceTree = "<group>"; };
+		B8412FEC2355CC3A00C48CC7 /* ProtocolsPageV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsPageV.swift; sourceTree = "<group>"; };
 		B844760C235069550022486F /* TestWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B844760F235069550022486F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8447614235069550022486F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		B878A6CB235463A0003E013B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B878A6CD23546A4D003E013B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B878A6CF23546AB8003E013B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		B87F30D7235756D600772995 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B8D754F62354C4C4001451E3 /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
 		CCC77E2C235241EA00CD9F02 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CCC77E2F235254F800CD9F02 /* WeatherModelJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelJSON.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		B8064D482350751200D0C628 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B87F30D7235756D600772995 /* LocationManager.swift */,
 				B8064D4B2350754A00D0C628 /* Constants.swift */,
 				B8064D4D235075E300D0C628 /* BundleHelper.swift */,
 				B8064D512350A61400D0C628 /* LocationHelper.swift */,
@@ -202,6 +209,8 @@
 				B8064D4223506F7000D0C628 /* MainPageViewController.swift */,
 				B8064D4423506FC500D0C628 /* TutorialFirstViewController.swift */,
 				B8064D4623506FD900D0C628 /* TutorialSecondViewController.swift */,
+				B8412FEA2355CBE100C48CC7 /* PresenterPageV.swift */,
+				B8412FEC2355CC3A00C48CC7 /* ProtocolsPageV.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8064D4723506FD900D0C628 /* TutorialSecondViewController.swift in Sources */,
+				B8412FED2355CC3A00C48CC7 /* ProtocolsPageV.swift in Sources */,
 				CCC77E30235254F800CD9F02 /* WeatherModelJSON.swift in Sources */,
 				CCEBB50723531A5400AD1B1A /* BuilderLoading.swift in Sources */,
 				CCD6DE412351AF10005A1001 /* PageViewBuilder.swift in Sources */,
@@ -388,7 +398,9 @@
 				CCD6DE432351B19A005A1001 /* Utils.swift in Sources */,
 				CCEBB50923531C1500AD1B1A /* BaseNavigationController.swift in Sources */,
 				B8064D522350A61400D0C628 /* LocationHelper.swift in Sources */,
+				B87F30D8235756D600772995 /* LocationManager.swift in Sources */,
 				CCD2376C23512CA100017A34 /* Api.swift in Sources */,
+				B8412FEB2355CBE100C48CC7 /* PresenterPageV.swift in Sources */,
 				B8064D4C2350754A00D0C628 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

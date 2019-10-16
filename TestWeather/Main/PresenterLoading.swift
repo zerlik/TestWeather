@@ -14,27 +14,41 @@ class PresenterLoading : LoadingPresenterProtocol{
     var router: RouterProtocol?
     
     var remoteDatamanager: RemoteDataManagerInputProtocol?
+    private var flagPresentCoordinates : Bool?
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self,  name: .didReceiveLocation, object: nil)
+    }
     
     func viewDidLoad(){
-        
+        NotificationCenter.default.addObserver( self, selector: #selector(getCoordinates), name: .didReceiveLocation, object: nil)
     }
     
     func willAppear(){
-        guard let coordinates = LocationHelper.getSavedLocation() else{
-            router?.navigate(to: .goToPageView)
-            return
+        if let coordinates = LocationHelper.getSavedLocation() {
+            remoteDatamanager?.retrieveWeather(lat: coordinates.latitude, long: coordinates.longitude)
         }
-        remoteDatamanager?.retrieveWeather(lat: coordinates.latitude, long: coordinates.longitude)
+        else{
+            if flagPresentCoordinates == nil {// wait retreive coordinates
+                router?.navigate(to: .goToPageView)
+                flagPresentCoordinates = false
+            }
+        }
+    }
+    
+    @objc private func getCoordinates(notification: NSNotification) {
+        flagPresentCoordinates = true
+        self.willAppear()
     }
 }
 
 extension PresenterLoading: RemoteDataManagerOutputProtocol{
     func weatherDataRetrieved(_ data: WeatherModelJson) {
-        print(data.nameCity)
-        router?.navigate(to: .goToWeatherVC(data))
+            router?.navigate(to: .goToWeatherVC(data))
     }
     
     func onError(_ error: String) {
+        print("ERRROR Req")
         // vc present ASheet error
     }
 }
