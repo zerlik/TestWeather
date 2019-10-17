@@ -28,17 +28,6 @@ class LocationViewController :  UIViewController {
 
 extension LocationViewController : CLLocationManagerDelegate{
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorized || status == .authorizedWhenInUse{
-            NotificationCenter.default.post(name: .showButtonNext, object: nil)
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-            getMyLocation()
-        }else{
-            self.getPermission()
-        }
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         getMyLocation()
     }
@@ -47,7 +36,7 @@ extension LocationViewController : CLLocationManagerDelegate{
         
     }
     
-    private func getPermission(){
+    public func getPermission(){
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -63,14 +52,15 @@ extension LocationViewController : CLLocationManagerDelegate{
                 locationManager.startUpdatingLocation()
                 getMyLocation()
                 break
-            default:  NotificationCenter.default.post(name: .showSettingActiveSheet, object: nil)
+            default:
+                NotificationCenter.default.post(name: .showSettingActiveSheet, object: nil)
             }
         }else{
             NotificationCenter.default.post(name: .showSettingActiveSheet, object: nil)
         }
     }
     
-    private func getMyLocation(){
+    public func getMyLocation(){
         guard let currLoc = locationManager.location else{ return }
         let lat : Double = Double(currLoc.coordinate.latitude)
         let long : Double = Double(currLoc.coordinate.longitude)

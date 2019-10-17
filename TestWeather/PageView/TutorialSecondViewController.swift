@@ -32,6 +32,7 @@ class TutorialSecondViewController: AppBaseViewController {
         }
         
         @objc private func buttonAction(sender: UIButton!) {
+            UtilsWeather.analiticsG(.buttonNext, param: nil)
             UtilsWeather.dissmisVC(view : self)
         }
         

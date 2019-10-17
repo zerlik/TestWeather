@@ -10,9 +10,9 @@ import Foundation
 
 internal class NetworkProvider {
     
-    public func getWeatherFromNetwork( completion: @escaping (WeatherModelJson?, Error?)->Void ){
+    public func getWeatherFromNetwork( lat: Double, long: Double, completion: @escaping (WeatherModelJson?, Error?)->Void ){
         let service = ServiceNetwork()
-        service.getWeather(completion: { (weather, err) in
+        service.getWeather( lat: lat, long: long, completion: { (weather, err) in
             return completion (weather,err)
         })
     }

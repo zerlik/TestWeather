@@ -18,7 +18,7 @@ internal class RemoteDataManager: RemoteDataManagerInputProtocol {
     }
     
     func retrieveWeather(lat: Double, long: Double){
-        service.getWeatherFromNetwork { (weather , error) in
+        service.getWeatherFromNetwork(lat: lat, long: long) { (weather , error) in
             if let err = error as? String {
                 self.remoteRequestHandler?.onError(err)
             }
@@ -30,3 +30,5 @@ internal class RemoteDataManager: RemoteDataManagerInputProtocol {
         }
     }
 }
+
+

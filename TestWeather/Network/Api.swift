@@ -9,18 +9,17 @@
 import Foundation
 import UIKit
 
-import Foundation
 protocol ServiceNetworkProtocol {
-    func getWeather( completion: @escaping ( WeatherModelJson,Error?)->Void )
+    func getWeather( lat: Double, long: Double, completion: @escaping ( WeatherModelJson,Error?)->Void )
 }
 
 class ServiceNetwork: ServiceNetworkProtocol{
     
     init(){}
     
-    func getWeather( completion: @escaping ( WeatherModelJson,Error?)->Void ){
+    func getWeather( lat: Double, long: Double, completion: @escaping ( WeatherModelJson,Error?)->Void ){
         
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=53.890961&lon=27.585833&appid=aeb46271e330b0e38e34ba813a0c6a4f&units=metric") else{ return }
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=aeb46271e330b0e38e34ba813a0c6a4f&units=metric") else{ return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, err) in
             

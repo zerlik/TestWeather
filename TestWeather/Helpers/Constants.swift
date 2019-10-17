@@ -28,13 +28,10 @@ public enum Constants {
     }
     
     public enum NetworkApi{
-    public static let userApiKey: String = "aeb46271e330b0e38e34ba813a0c6a4f"
-    public static let endPointApi: String = "http://api.openweathermap.org/data/2.5/weather"
+        public static let userApiKey: String = "aeb46271e330b0e38e34ba813a0c6a4f"
+        public static let endPointApi: String = "http://api.openweathermap.org/data/2.5/weather"
     }
     
-    public enum Fonts{
-        public static let font17 = UIFont.systemFont(ofSize: 17, weight: .regular)
-    }
 }
 
 extension Notification.Name {

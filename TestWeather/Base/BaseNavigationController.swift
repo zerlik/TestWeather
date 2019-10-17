@@ -13,8 +13,7 @@ class AppBaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationBar.isHidden = true
+
     }
 
     override func didReceiveMemoryWarning() {

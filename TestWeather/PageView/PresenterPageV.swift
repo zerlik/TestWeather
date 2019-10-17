@@ -27,10 +27,10 @@ class PresenterPage : PagePresenterProtocol{
         NotificationCenter.default.addObserver( self, selector: #selector(showButtonNext), name: .showButtonNext, object: nil)
     }
     @objc private func showButtonNext(){
-        if view != nil{ view!.showButtonOnFirstView() }
+            if self.view != nil{ self.view!.showButtonOnFirstView() }
     }
     @objc private func showActionSheet(){
-        if view != nil{ view!.showActionSheet() }
+            if self.view != nil{ self.view!.showActionSheet() } 
     }
 }
 

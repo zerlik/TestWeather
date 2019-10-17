@@ -16,6 +16,8 @@ class LoadingViewController: AppBaseViewController, LoadingViewCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

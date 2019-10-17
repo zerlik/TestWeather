@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class UtilsWeather{
     
@@ -17,5 +18,11 @@ class UtilsWeather{
             return
         }
     }
+    class func analiticsG (_ nameEvent: FirebaseAnaliticsName , param : [String:Any]?){
+        Analytics.logEvent(nameEvent.rawValue, parameters: param)
+    }
 }
-
+public enum FirebaseAnaliticsName: String{
+    case buttonNext = "PageVEvents_buttonNext"
+    case buttonOk = "PageVEvents_buttonOk"
+}

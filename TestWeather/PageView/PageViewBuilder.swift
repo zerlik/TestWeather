@@ -27,7 +27,6 @@ internal final class PageViewBuilder{
         presenter.view = cont
         presenter.router = router
         
-        return cont
-        
+        return cont        
     }
 }

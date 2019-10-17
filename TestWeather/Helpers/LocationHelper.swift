@@ -34,10 +34,7 @@ class LocationHelper{
         UserDefaults.standard.set(lat , forKey: "lat")
         UserDefaults.standard.set(long, forKey: "long")
     }
-    
-    //    class func getSavedLocation()->Observable<String?>{
-    //       return UserDefaults.standard.rx.observe(String.self, "long")
-    
+   
     class func getSavedLocation()->CLLocationCoordinate2D?{
         guard let longStr =  UserDefaults.standard.string(forKey: "long") , let latStr =  UserDefaults.standard.string(forKey: "lat") else{ return nil }
         guard let longNumb = Double(longStr), let latNumb = Double(latStr) else { return nil }

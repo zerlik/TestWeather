@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAnalytics
 
 internal class TutorialFirstViewController:AppBaseViewController {
     
@@ -33,12 +34,13 @@ internal class TutorialFirstViewController:AppBaseViewController {
     
     public var presenter: PagePresenterProtocol!
     
+    let locationViewController = LocationViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.locationViewController.locationManager.delegate = self
         setUI()
     }
-    
-    let locationViewController = LocationViewController()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -47,6 +49,7 @@ internal class TutorialFirstViewController:AppBaseViewController {
     
     
     @objc private func buttonAction(sender: UIButton!) {
+       UtilsWeather.analiticsG(.buttonOk, param: nil)
         nextCallBack()
     }
     
@@ -60,11 +63,15 @@ internal class TutorialFirstViewController:AppBaseViewController {
     }
     
     public func showButton(){
-        self.nextButton.isHidden = false
+        DispatchQueue.main.async {
+            self.nextButton.isHidden = false
+        }
     }
     
     public func showActionSheet(){
+          DispatchQueue.main.async {
         LocationHelper.alertSettingsMessage(title: Constants.AllStr.locationMessage, message:  Constants.AllStr.needAccesMessage, viewController: self)
+        }
     }
     
     private func setupAutoLayout() {
@@ -78,5 +85,18 @@ internal class TutorialFirstViewController:AppBaseViewController {
         self.nextButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20 ).isActive = true
         self.nextButton.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -70 ).isActive = true
         self.nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+}
+
+extension TutorialFirstViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorized || status == .authorizedWhenInUse{
+            self.locationViewController.locationManager.requestWhenInUseAuthorization()
+            self.locationViewController.locationManager.startUpdatingLocation()
+            self.locationViewController.getMyLocation()
+            self.nextButton.isHidden = false
+        }else{
+            self.locationViewController.getPermission()
+        }
     }
 }
