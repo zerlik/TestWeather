@@ -12,7 +12,7 @@ class PresenterWeather : WeatherPresenterProtocol{
     
     var view: WeatherViewCProtocol?
     
-    var weather: WeatherModelJson!
+    var weather: WeatherData!
     
     func viewDidLoad(){
         view?.setUI(self.weather)

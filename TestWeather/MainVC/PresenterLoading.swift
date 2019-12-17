@@ -43,12 +43,16 @@ class PresenterLoading : LoadingPresenterProtocol{
 }
 
 extension PresenterLoading: RemoteDataManagerOutputProtocol{
-    func weatherDataRetrieved(_ data: WeatherModelJson) {
-            router?.navigate(to: .goToWeatherVC(data))
+    
+    func onError(_ error: NetworkResponseStatus) {
+        switch error{
+        case .noNetwork: view?.showNoInternet(error.text)
+        default: view?.showError(error.text)
+        }
     }
     
-    func onError(_ error: String) {
-        print("ERRROR Req")
-        // vc present ASheet error
+    func weatherDataRetrieved(_ data: WeatherData) {
+            router?.navigate(to: .goToWeatherVC(data))
     }
+   
 }

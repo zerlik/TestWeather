@@ -22,7 +22,7 @@ class WeatherViewController: AppBaseViewController , WeatherViewCProtocol{
         presenter.viewDidLoad()
     }
     
-    public func setUI(_ data: WeatherModelJson ){
+    public func setUI(_ data: WeatherData ){
         if let city = data.nameCity {
             nameCity.text = city
             if (city.contains("Horad")){

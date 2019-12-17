@@ -11,7 +11,7 @@ import UIKit
 
 internal final class WeatherBuilder{
     
-    static func make(data: WeatherModelJson) -> UIViewController {
+    static func make(data: WeatherData) -> UIViewController {
         
         let storyboard = UIStoryboard(name: "Weather", bundle: Bundle(for: WeatherBuilder.self))
         let view = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController

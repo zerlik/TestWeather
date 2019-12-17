@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct WeatherModelJson : Codable{
+internal class WeatherData: Decodable {
     
-    let main : MainWeatherModelJson?
+    let main : WeatherModelJson?
     let nameCity : String?
     
     enum CodingKeys : String, CodingKey {
@@ -20,9 +20,9 @@ struct WeatherModelJson : Codable{
     }
 }
 
-extension WeatherModelJson{
+extension WeatherData{
     
-    struct MainWeatherModelJson : Codable{
+    struct WeatherModelJson : Codable{
         
         let temp : Double?
         let pressure : Double?
@@ -56,3 +56,5 @@ extension WeatherModelJson{
 //"name":"Horad Minsk",
 //"cod":200
 //}
+
+

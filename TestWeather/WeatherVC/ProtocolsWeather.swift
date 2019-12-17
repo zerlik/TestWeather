@@ -8,11 +8,11 @@
 
 import Foundation
 internal protocol WeatherViewCProtocol : class{
-    func setUI(_ data: WeatherModelJson )
+    func setUI(_ data: WeatherData )
 }
 
 internal protocol WeatherPresenterProtocol: class {
     var view: WeatherViewCProtocol? { get set}
-    var weather: WeatherModelJson!{get set}
+    var weather: WeatherData!{get set}
     func viewDidLoad()
 }

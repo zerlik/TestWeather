@@ -10,6 +10,14 @@ import Foundation
 
 internal protocol LoadingViewCProtocol : class{
     
+    //super
+       func setSpinnerOnFullView()
+       func stopSpiner()
+       func showError(_ error: String)
+       func showLoading()
+       func hideLoading()
+     func showNoInternet(_ error: String) 
+    
 }
 
 internal protocol LoadingPresenterProtocol: class {
@@ -19,6 +27,7 @@ internal protocol LoadingPresenterProtocol: class {
     
     func viewDidLoad()
     func willAppear()
+    
 }
 
 internal protocol RemoteDataManagerInputProtocol: class{
@@ -27,7 +36,7 @@ internal protocol RemoteDataManagerInputProtocol: class{
 }
 
 internal protocol RemoteDataManagerOutputProtocol: class{
-    func weatherDataRetrieved(_ data: WeatherModelJson)
-    func onError(_ error: String)
+    func weatherDataRetrieved(_ data: WeatherData)
+    func onError(_ error: NetworkResponseStatus)
 }
 

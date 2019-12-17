@@ -11,7 +11,7 @@ import UIKit
 
 internal enum Route: Equatable {
     case dismissPage
-    case goToWeatherVC(_ data: WeatherModelJson)
+    case goToWeatherVC(_ data: WeatherData)
     case goToPageView
     
     static func == (lhs: Route, rhs: Route) -> Bool {

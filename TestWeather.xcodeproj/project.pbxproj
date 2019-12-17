@@ -28,9 +28,13 @@
 		B878A6CE23546A4D003E013B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6CD23546A4D003E013B /* Repository.swift */; };
 		B878A6D023546AB8003E013B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6CF23546AB8003E013B /* NetworkProvider.swift */; };
 		B87F30D8235756D600772995 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F30D7235756D600772995 /* LocationManager.swift */; };
+		CC7FFFF523A675AF00DA8562 /* MoyaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FFFF423A675AF00DA8562 /* MoyaRouter.swift */; };
+		CCA80D3923A69EA10003789F /* WeatherNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA80D3823A69EA10003789F /* WeatherNetwork.swift */; };
+		CCA80D3D23A6A17A0003789F /* NetworkFetchErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA80D3C23A6A17A0003789F /* NetworkFetchErrors.swift */; };
+		CCA80D3F23A6A21A0003789F /* RouterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA80D3E23A6A21A0003789F /* RouterProvider.swift */; };
+		CCA80D4123A6ACA60003789F /* InetPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA80D4023A6ACA60003789F /* InetPresent.swift */; };
 		CCC77E2D235241EA00CD9F02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC77E2C235241EA00CD9F02 /* BaseViewController.swift */; };
 		CCC77E30235254F800CD9F02 /* WeatherModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC77E2F235254F800CD9F02 /* WeatherModelJSON.swift */; };
-		CCD2376C23512CA100017A34 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2376B23512CA100017A34 /* Api.swift */; };
 		CCD6DE3D2351AD4C005A1001 /* PageV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD6DE3C2351AD4C005A1001 /* PageV.storyboard */; };
 		CCD6DE3F2351ADCE005A1001 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6DE3E2351ADCE005A1001 /* LoadingViewController.swift */; };
 		CCD6DE412351AF10005A1001 /* PageViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6DE402351AF10005A1001 /* PageViewBuilder.swift */; };
@@ -69,9 +73,13 @@
 		B878A6CD23546A4D003E013B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B878A6CF23546AB8003E013B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		B87F30D7235756D600772995 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CC7FFFF423A675AF00DA8562 /* MoyaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaRouter.swift; sourceTree = "<group>"; };
+		CCA80D3823A69EA10003789F /* WeatherNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetwork.swift; sourceTree = "<group>"; };
+		CCA80D3C23A6A17A0003789F /* NetworkFetchErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchErrors.swift; sourceTree = "<group>"; };
+		CCA80D3E23A6A21A0003789F /* RouterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProvider.swift; sourceTree = "<group>"; };
+		CCA80D4023A6ACA60003789F /* InetPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InetPresent.swift; sourceTree = "<group>"; };
 		CCC77E2C235241EA00CD9F02 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CCC77E2F235254F800CD9F02 /* WeatherModelJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelJSON.swift; sourceTree = "<group>"; };
-		CCD2376B23512CA100017A34 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CCD6DE3C2351AD4C005A1001 /* PageV.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PageV.storyboard; sourceTree = "<group>"; };
 		CCD6DE3E2351ADCE005A1001 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CCD6DE402351AF10005A1001 /* PageViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewBuilder.swift; sourceTree = "<group>"; };
@@ -115,7 +123,7 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		B8064D4123506F1D00D0C628 /* Main */ = {
+		B8064D4123506F1D00D0C628 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
 				B8447613235069550022486F /* Main.storyboard */,
@@ -125,7 +133,7 @@
 				CCEBB50A2353208700AD1B1A /* ProtocolsLoading.swift */,
 				B878A6CD23546A4D003E013B /* Repository.swift */,
 			);
-			path = Main;
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 		B8064D482350751200D0C628 /* Helpers */ = {
@@ -136,7 +144,7 @@
 				B8064D4D235075E300D0C628 /* BundleHelper.swift */,
 				B8064D512350A61400D0C628 /* LocationHelper.swift */,
 				CCD6DE422351B19A005A1001 /* Utils.swift */,
-				B84356582358750800AF0884 /* StringExtension.swift */,
+				CCA80D4023A6ACA60003789F /* InetPresent.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -162,12 +170,13 @@
 		B844760E235069550022486F /* TestWeather */ = {
 			isa = PBXGroup;
 			children = (
+				CCA80D4223A6B6B50003789F /* Extensions */,
+				CCA80D3A23A6A1500003789F /* DataManager */,
 				CCC77E2B235241CC00CD9F02 /* Base */,
-				CCD6DE442351B2F8005A1001 /* WeatherView */,
-				CCD6DE3B2351A3B4005A1001 /* PageView */,
-				CCD2376A23512C8B00017A34 /* Network */,
+				CCD6DE442351B2F8005A1001 /* WeatherVC */,
+				CCD6DE3B2351A3B4005A1001 /* PageVC */,
 				B8064D482350751200D0C628 /* Helpers */,
-				B8064D4123506F1D00D0C628 /* Main */,
+				B8064D4123506F1D00D0C628 /* MainVC */,
 				B8064D4023506BF700D0C628 /* SupportFiles */,
 				B844761B235069560022486F /* Info.plist */,
 				B843565623586AAF00AF0884 /* GoogleService-Info.plist */,
@@ -175,6 +184,39 @@
 				B878A6CB235463A0003E013B /* Router.swift */,
 			);
 			path = TestWeather;
+			sourceTree = "<group>";
+		};
+		CC7FFFF023A6729900DA8562 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FFFF423A675AF00DA8562 /* MoyaRouter.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CCA80D3A23A6A1500003789F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CCD2376A23512C8B00017A34 /* Networking */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CCA80D3B23A6A1650003789F /* Netw */ = {
+			isa = PBXGroup;
+			children = (
+				CCA80D3C23A6A17A0003789F /* NetworkFetchErrors.swift */,
+				CCA80D3E23A6A21A0003789F /* RouterProvider.swift */,
+			);
+			path = Netw;
+			sourceTree = "<group>";
+		};
+		CCA80D4223A6B6B50003789F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B84356582358750800AF0884 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CCC77E2B235241CC00CD9F02 /* Base */ = {
@@ -194,17 +236,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CCD2376A23512C8B00017A34 /* Network */ = {
+		CCD2376A23512C8B00017A34 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CCA80D3B23A6A1650003789F /* Netw */,
+				CC7FFFF023A6729900DA8562 /* API */,
 				CCC77E2E235254D700CD9F02 /* Models */,
-				CCD2376B23512CA100017A34 /* Api.swift */,
 				B878A6CF23546AB8003E013B /* NetworkProvider.swift */,
+				CCA80D3823A69EA10003789F /* WeatherNetwork.swift */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
-		CCD6DE3B2351A3B4005A1001 /* PageView */ = {
+		CCD6DE3B2351A3B4005A1001 /* PageVC */ = {
 			isa = PBXGroup;
 			children = (
 				CCD6DE3C2351AD4C005A1001 /* PageV.storyboard */,
@@ -215,10 +259,10 @@
 				B8412FEA2355CBE100C48CC7 /* PresenterPageV.swift */,
 				B8412FEC2355CC3A00C48CC7 /* ProtocolsPageV.swift */,
 			);
-			path = PageView;
+			path = PageVC;
 			sourceTree = "<group>";
 		};
-		CCD6DE442351B2F8005A1001 /* WeatherView */ = {
+		CCD6DE442351B2F8005A1001 /* WeatherVC */ = {
 			isa = PBXGroup;
 			children = (
 				CCD6DE452351B313005A1001 /* Weather.storyboard */,
@@ -227,7 +271,7 @@
 				B84BF7162354B2C600CDF8C4 /* PresenterWeather.swift */,
 				B84BF7182354B2FA00CDF8C4 /* ProtocolsWeather.swift */,
 			);
-			path = WeatherView;
+			path = WeatherVC;
 			sourceTree = "<group>";
 		};
 		FF732397DD999B824F02BA73 /* Pods */ = {
@@ -381,11 +425,13 @@
 				B8064D4723506FD900D0C628 /* TutorialSecondViewController.swift in Sources */,
 				B8412FED2355CC3A00C48CC7 /* ProtocolsPageV.swift in Sources */,
 				CCC77E30235254F800CD9F02 /* WeatherModelJSON.swift in Sources */,
+				CCA80D4123A6ACA60003789F /* InetPresent.swift in Sources */,
 				CCEBB50723531A5400AD1B1A /* BuilderLoading.swift in Sources */,
 				CCD6DE412351AF10005A1001 /* PageViewBuilder.swift in Sources */,
 				CCEBB50B2353208700AD1B1A /* ProtocolsLoading.swift in Sources */,
 				B8064D4E235075E300D0C628 /* BundleHelper.swift in Sources */,
 				B84BF7192354B2FA00CDF8C4 /* ProtocolsWeather.swift in Sources */,
+				CCA80D3D23A6A17A0003789F /* NetworkFetchErrors.swift in Sources */,
 				B8064D4323506F7000D0C628 /* MainPageViewController.swift in Sources */,
 				B878A6D023546AB8003E013B /* NetworkProvider.swift in Sources */,
 				CCD6DE4C2351B387005A1001 /* WeatherViewController.swift in Sources */,
@@ -401,9 +447,11 @@
 				CCD6DE3F2351ADCE005A1001 /* LoadingViewController.swift in Sources */,
 				CCD6DE432351B19A005A1001 /* Utils.swift in Sources */,
 				CCEBB50923531C1500AD1B1A /* BaseNavigationController.swift in Sources */,
+				CCA80D3923A69EA10003789F /* WeatherNetwork.swift in Sources */,
+				CC7FFFF523A675AF00DA8562 /* MoyaRouter.swift in Sources */,
 				B8064D522350A61400D0C628 /* LocationHelper.swift in Sources */,
+				CCA80D3F23A6A21A0003789F /* RouterProvider.swift in Sources */,
 				B87F30D8235756D600772995 /* LocationManager.swift in Sources */,
-				CCD2376C23512CA100017A34 /* Api.swift in Sources */,
 				B8412FEB2355CBE100C48CC7 /* PresenterPageV.swift in Sources */,
 				B8064D4C2350754A00D0C628 /* Constants.swift in Sources */,
 			);

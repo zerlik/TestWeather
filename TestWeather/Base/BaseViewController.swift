@@ -11,29 +11,44 @@ import UIKit
 
 class AppBaseViewController: UIViewController{
     
-//   private var snackBar : UILabel?
-//   private var activityIndicator = UIActivityIndicatorView()
+    
+    //   private var snackBar : UILabel?
+    private var activityIndicator = UIActivityIndicatorView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
 }
 
 extension AppBaseViewController{
-
+    
     func showNoInetConnectionView(show:Bool){
         //TODO: make snackbar
     }
-
-    func spinnerOnFullView(_ position:Position){
-        //TODO: make spinner
+    
+    func setSpinnerOnFullView(){
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
     }
+    
     func stopSpiner(){
-//        self.activityIndicator.stopAnimating()
-//        self.activityIndicator.removeFromSuperview()
-//        UIApplication.shared.endIgnoringInteractionEvents()
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     func showError(_ error: String) {
         print("error", error)
     }
+    
+    func showNoInternet(_ error: String) {
+           print("error", error)
+       }
     
     func showLoading() {
         DispatchQueue.main.async {
@@ -47,14 +62,10 @@ extension AppBaseViewController{
         }
     }
     
-}
-
-enum Position {
-    case left
-    case right
-    case top
-    case bottom
-    case forAuth
+    func showActionSheet(_ text: String?, title: String? ) {
+        
+    }
+    
 }
 
 

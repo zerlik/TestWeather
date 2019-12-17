@@ -12,6 +12,8 @@ import UIKit
 public enum Constants {
     
     public static let app = "TestWeather"
+    public static let endPoint = "http://api.openweathermap.org/data/2.5"
+    public static let apiId = "aeb46271e330b0e38e34ba813a0c6a4f"
     
     public enum AllImages{
         
